@@ -1,0 +1,36 @@
+#:import environ os.environ
+#:import get_hex_from_color kivy.utils.get_hex_from_color
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import colors kivymd.color_definitions.colors
+#:import Toolbar scripts.toolbar.Toolbar
+
+
+<ShrinePresplashTile@Label>
+    color: app.theme_cls.text_color
+    font_size: "24sp"
+    size_hint_y: None
+    height: self.texture_size[1]
+
+
+
+BoxLayout:
+    orientation: "vertical"
+
+    BoxLayout:
+        id: toolbar_box
+        size_hint_y: None
+        height: self.minimum_height
+
+    ScreenManager:
+        id: screen_manager
+        transition: FadeTransition(duration=.2, clearcolor=app.theme_cls.bg_dark)
+        Screen:
+            name: "homepage"
+            HomePage:
+
+
+
+
+
+

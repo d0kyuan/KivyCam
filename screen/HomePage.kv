@@ -1,0 +1,31 @@
+#:import HomePage scripts.homepage.HomePage
+#:import environ os.environ
+#:import Toolbar scripts.toolbar.Toolbar
+<HomePage>
+    Toolbar:
+        id: toolbar
+        pos_hint: {"top": 1}
+
+    MDBoxLayout:
+        adaptive_size: True
+        pos_hint: {"center_x": .5, "center_y": .5}
+        spacing: 12
+        orientation: "vertical"
+        Image:
+            id :imageView
+            size_hint_x: 0.7
+            allow_stretch: True
+        MDRaisedButton:
+            text: 'Capture'
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.capture()
+        MDRaisedButton:
+            disabled: False
+            text: 'upload'
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.upload()
+
+
+
